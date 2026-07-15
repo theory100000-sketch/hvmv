@@ -1,0 +1,32 @@
+THUNDER ELITE LEAGUE - FIX DE LOGIN
+===================================
+
+Este paquete corrige el problema por el que, después de iniciar sesión o registrarse,
+la web vuelve sola al login.
+
+USO AUTOMATICO
+--------------
+1. Descarga tu repositorio de GitHub como ZIP y descomprímelo.
+2. Copia estos cuatro archivos en la misma carpeta donde está index.html.
+3. Haz doble clic en APLICAR_FIX_LOGIN.bat.
+4. El programa crea una copia de seguridad de index.html.
+5. Sube a GitHub los archivos modificados:
+   - index.html
+   - tel-auth-fix.js
+6. En Vercel, abre Deployments y pulsa Redeploy.
+7. En el navegador, borra una vez los datos antiguos de Local Storage y regístrate de nuevo.
+
+QUE CORRIGE
+-----------
+- Unifica login y registro usando tel_accounts, tel_current_email y tel_logged_in.
+- Evita que listeners antiguos ejecuten un segundo login.
+- Evita la redirección tardía a #login cuando la sesión sí es válida.
+- Corrige expresiones JavaScript defectuosas detectadas en versiones anteriores.
+- Mantiene funcionando el cierre de sesión voluntario.
+
+SEGURIDAD
+---------
+Este arreglo conserva el sistema local actual del proyecto. Las contraseñas siguen
+almacenándose en localStorage, por lo que no debe considerarse un sistema de
+autenticación seguro para producción. Para producción se recomienda autenticación
+en servidor con cookies HttpOnly y contraseñas cifradas.
